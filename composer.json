@@ -1,0 +1,15 @@
+{
+    "name": "ngoma/route-manager-php",
+    "autoload": {
+        "psr-4": {
+            "Ngoma\\RouteManagerPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ngoma Fortuna",
+            "email": "ngomafortuna@gmail.com"
+        }
+    ],
+    "require": {}
+}
