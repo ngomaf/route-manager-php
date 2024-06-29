@@ -2,7 +2,10 @@
     "name": "ngoma/route-manager-php",
     "autoload": {
         "psr-4": {
-            "Ngoma\\RouteManagerPhp\\": "src/"
+            "Models\\": "src/models",
+            "Controllers\\": "src/controllers",
+            "Helpers\\": "helpers",
+            "Routes\\": "routes"
         }
     },
     "authors": [
