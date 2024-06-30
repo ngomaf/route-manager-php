@@ -14,7 +14,6 @@ class Notice  extends Controller {
     }
     
     public function show ($slug) {
-        echo $slug;
         $this->view->slug = $slug;
         $this->view->render('site/notice');
     }

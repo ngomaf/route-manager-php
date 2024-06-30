@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace Controllers\admin;
 
 use Helpers\Controller;
 
@@ -10,7 +10,12 @@ class User extends Controller {
     }
 
     public function index() {
-        $this->view->render('admin/dashboard');
+        $this->view->render('admin/users');
+    }
+
+    public function show($params) {
+        $this->view->slug = $params[1];
+        $this->view->render('admin/user');
     }
 
 }

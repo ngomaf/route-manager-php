@@ -1,6 +1,6 @@
 <?php 
 
-namespace Controllers;
+namespace Controllers\site;
 
 use Helpers\Controller;
 use Models\NoticeModel;
@@ -11,7 +11,7 @@ class Home extends Controller {
     }
 
     public function index() {
-        $this->view->render('home');
+        $this->view->render('site/home');
     }
 
     public function getNotice() {
