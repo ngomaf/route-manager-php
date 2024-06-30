@@ -83,18 +83,6 @@ class ManagerRoute {
         } else {
             $object->{$this->verbs[0]}($this->verbs);
         }
-        
-
-        /*
-        echo "<br>";
-        echo $this->path . $ctrl .'.php';
-        echo "<br>";
-        var_dump($this->dir);
-        echo "<br>";
-        var_dump($this->ctrl);
-        echo "<br>";
-        var_dump($this->verbs);
-        */
 
     }
     
