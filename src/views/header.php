@@ -12,6 +12,7 @@
                 <li><a href="<?= URL ?>">Home</a></li>
                 <li><a href="<?= URL ?>/about">About</a></li>
                 <li><a href="<?= URL ?>/notice">Notice</a></li>
+                <li><a href="<?= URL ?>/project">Projectos</a></li>
                 <li><a href="<?= URL ?>/admin">admin</a></li>
             </ul>
         </nav>

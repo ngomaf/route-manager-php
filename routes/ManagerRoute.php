@@ -46,8 +46,20 @@ class ManagerRoute {
                 $this->ctrl = new \Controllers\site\Notice;
                 $this->ctrl->show($this->url[0]);
             }
-
+            
             return false;
+        } elseif($this->tam==2 && !is_dir($this->path.$this->url[0])) {
+            // condetion to permit remove show verb in url
+            $ctrl = ucfirst($this->url[0]);
+            $ClassName = "Controllers\\site\\{$ctrl}";
+            $object = new $ClassName();
+
+            if(!method_exists($object, $this->url[1])) {
+                $object->show($this->url[1]);
+                return false;
+            }
+            $object->index();
+
         } else {
             $this->verifyDir();
         }
@@ -62,8 +74,9 @@ class ManagerRoute {
                 $this->dir = $this->url[$i];
 
             } else {
-
+                
                 $ctrl = ucfirst($this->url[$i]);
+
                 if(file_exists($this->path . $ctrl .'.php')){
                     $this->ctrl = $ctrl;
                 } else {
@@ -79,7 +92,13 @@ class ManagerRoute {
         if(sizeof($this->verbs)==0) {
             $object->index();
         } elseif(sizeof($this->verbs)==1) {
-            $object->{$this->verbs[0]}();
+            // condetion to permit remove show verb in url
+            if(method_exists($object, $this->verbs[0])) {
+                $object->{$this->verbs[0]}();
+            } else {
+                $this->verbs[1] = $this->verbs[0];
+                $object->show($this->verbs);
+            }
         } else {
             $object->{$this->verbs[0]}($this->verbs);
         }
