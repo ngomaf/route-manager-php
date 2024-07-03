@@ -2,7 +2,7 @@
 
     require_once DIR."src/views/header.php";
 ?>
-    <a href="<?= URL ?>/admin/notice">« back</a>
+    <a href="<?= URL ?>/admin/noticia">« back</a>
     <h1>Single notice page</h1>
     <p>This is a Single notice manage page.</p>
     <p>The called Slug is: <?= $this->slug ?>.</p>

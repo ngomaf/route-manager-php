@@ -10,9 +10,9 @@
         <nav>
             <ul>
                 <li><a href="<?= URL ?>">Home</a></li>
-                <li><a href="<?= URL ?>/about">About</a></li>
-                <li><a href="<?= URL ?>/notice">Notice</a></li>
-                <li><a href="<?= URL ?>/project">Projectos</a></li>
+                <li><a href="<?= URL ?>/sobre">About</a></li>
+                <li><a href="<?= URL ?>/noticia">Notice</a></li>
+                <li><a href="<?= URL ?>/projecto">Projectos</a></li>
                 <li><a href="<?= URL ?>/admin">admin</a></li>
             </ul>
         </nav>
