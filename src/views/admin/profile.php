@@ -8,9 +8,9 @@
 
     <h1>Profile user</h1>
     <p>
-        <a href="<?= URL ?>/admin/profile/password">Password</a> | 
-        <a href="<?= URL ?>/admin/profile/edit">Edit data user</a> | 
-        <a href="<?= URL ?>/admin/profile/photo">Profile photo</a>
+        <a href="<?= URL ?>/admin/perfil/senha">Password</a> | 
+        <a href="<?= URL ?>/admin/perfil/editar">Edit data user</a> | 
+        <a href="<?= URL ?>/admin/perfil/foto">Profile photo</a>
     </p>
     <p>In future this will be beautful profile page.</p>
 

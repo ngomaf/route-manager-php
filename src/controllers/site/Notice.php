@@ -13,9 +13,15 @@ class Notice  extends Controller {
         $this->view->render('site/notices');
     }
     
-    public function show ($slug) {
-        $this->view->slug = $slug;
+    public function show ($params) {
+        var_dump($params);
+        $this->view->slug = $params;
         $this->view->render('site/notice');
+    }
+
+    public function category($params) {
+        $this->view->slug = $params;
+        $this->view->render('site/noticeCat');        
     }
 
 }

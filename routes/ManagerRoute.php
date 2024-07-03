@@ -3,34 +3,40 @@
 namespace Routes;
 
 use Routes\ParseRoute;
+use Routes\TranslateToPt;
 
 class ManagerRoute {
+
+    use ParseRoute;
+    use TranslateToPt;
 
     private $tam;
     private $ctrl;
     private $dir;
+    private $page;
     private $verbs = [];
     private $path = DIR .'src/controllers/';
 
-    use ParseRoute;
-
     public function __construct() {
         $this->url=ParseRoute::index();
-        $this->tam=count($this->url);        
+        $this->tam=count($this->url); 
+
+        // url translator
+        $this->page=TranslateToPt::get();
 
         $this->verifyParam();
     }
 
     private function verifyParam() {
-        if($this->tam == 1 && empty($this->url[0])) {
+        $item = isset($this->page[$this->url[0]])? $this->page[$this->url[0]]: $this->url[0];
+        if($this->tam == 1 && empty($item)) {
             // empty url condition
             $this->ctrl = new \Controllers\site\Home;
             $this->ctrl->index();
 
             return false;
-        } elseif ($this->tam==1 && !empty($this->url[0])) {
+        } elseif ($this->tam==1 && !empty($item)) {
             // if url heve one element
-            $item = $this->url[0];
             $ctrl = ucfirst($item);
             if(is_dir($this->path.$item)) {
                 // if url element exist end is a directory
@@ -48,13 +54,24 @@ class ManagerRoute {
             }
             
             return false;
-        } elseif($this->tam==2 && !is_dir($this->path.$this->url[0])) {
+        } elseif($this->tam<4 && !is_dir($this->path.$item)) {
             // condetion to permit remove show verb in url
-            $ctrl = ucfirst($this->url[0]);
+            $ctrl = ucfirst($item);
             $ClassName = "Controllers\\site\\{$ctrl}";
             $object = new $ClassName();
 
-            if(!method_exists($object, $this->url[1])) {
+            $param = isset($this->page[$this->url[1]])? $this->page[$this->url[1]]: $this->url[1];
+            if(method_exists($object, $param)) {
+                if($param=='show') {$object->show($this->url[2]);}
+                else 
+                {
+                    $url[]=isset($this->page[$this->url[1]])? $this->page[$this->url[1]]: $this->url[1];
+                    if(isset($this->url[2])) $url[]=$this->url[2];
+                    (isset($url[1]) && isset($this->page[$url[1]]))? $url[1]=$this->page[$url[1]]: null;
+                    $object->{$param}($url);
+                }
+                return false;
+            } elseif(!method_exists($object, $param)) {
                 $object->show($this->url[1]);
                 return false;
             }
@@ -68,19 +85,20 @@ class ManagerRoute {
     private function verifyDir() {        
 
         for($i=0; $i<$this->tam; $i++){
-            if(is_dir($this->path.$this->url[$i])) {
+            $item = isset($this->page[$this->url[$i]])? $this->page[$this->url[$i]]: $this->url[$i];
 
-                $this->path.=$this->url[$i].'/';
-                $this->dir = $this->url[$i];
+            if(is_dir($this->path.$item)) {
 
+                $this->path .= $item.'/';
+                $this->dir = $item;
+                
             } else {
                 
-                $ctrl = ucfirst($this->url[$i]);
-
+                $ctrl = ucfirst($item);                
                 if(file_exists($this->path . $ctrl .'.php')){
                     $this->ctrl = $ctrl;
                 } else {
-                    array_push($this->verbs, $this->url[$i]);
+                    array_push($this->verbs, $item);
                 }
 
             }

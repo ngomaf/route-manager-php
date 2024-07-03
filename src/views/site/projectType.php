@@ -2,12 +2,10 @@
 
     require_once DIR."src/views/header.php";
 ?>
-    <a href="<?= URL ?>/admin">« back</a>
-    <h1>Projects Page</h1>
-    <p>This is a Projects page.</p>
+    <a href="<?= URL ?>/projecto/tipo">« back</a>
+    <h1>Projects about <?= $this->slug ?></h1>
+    <p>This is a projects aboute <?= $this->slug ?> page.</p>
 
-    <p><a href="<?= URL ?>/projecto/tipo">Types of projects</a></p>
-    
     <ul>
         <li><a href="<?= URL ?>/project/web-dev">Web dev</a></li>
         <li><a href="<?= URL ?>/project/php-dev">PHP dev</a></li>

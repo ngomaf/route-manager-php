@@ -2,11 +2,11 @@
 
     require_once DIR."src/views/header.php";
 ?>
-    <a href="<?= URL ?>/admin/profile">« back</a>
+    <a href="<?= URL ?>/admin/noticia">« back</a>
     <h1>Edit notice</h1>
     <p>This page is to edit notice.</p>
 
-    <form action="<?= URL ?>/admin/profile/notice/update/rosa-fortuna-life" method="post">
+    <form action="<?= URL ?>/admin/noticia/actualizar/rosa-fortuna-life" method="post">
         <label for="title">Title</label><br>
         <input type="text" name="title" id="title" placeholder="Rosa Fortuna life"><br>
 
