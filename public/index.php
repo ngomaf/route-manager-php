@@ -10,7 +10,3 @@ use Routes\ManagerRoute;
 $manager = new ManagerRoute();
 
 
-
-
-
-

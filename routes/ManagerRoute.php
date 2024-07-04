@@ -4,6 +4,8 @@ namespace Routes;
 
 use Routes\ParseRoute;
 use Routes\TranslateToPt;
+use Controllers\site\ErrorMsg;
+
 
 class ManagerRoute {
 
@@ -72,7 +74,9 @@ class ManagerRoute {
                 }
                 return false;
             } elseif(!method_exists($object, $param)) {
-                $object->show($this->url[1]);
+                if(method_exists($object, 'show'))
+                {$object->show($this->url[1]);}
+                else {new ErrorMsg();}
                 return false;
             }
             $object->index();
@@ -104,6 +108,11 @@ class ManagerRoute {
             }
         }
 
+        if($this->dir==null) {
+            new ErrorMsg();
+            return false;
+        }
+
         $ClassName = "Controllers\\{$this->dir}\\{$this->ctrl}";
         $object = new $ClassName();
         
@@ -114,11 +123,17 @@ class ManagerRoute {
             if(method_exists($object, $this->verbs[0])) {
                 $object->{$this->verbs[0]}();
             } else {
-                $this->verbs[1] = $this->verbs[0];
-                $object->show($this->verbs);
+                if(method_exists($object, 'show')) {
+                    $this->verbs[1] = $this->verbs[0];
+                    $object->show($this->verbs);
+                    return false;
+                }
+                new ErrorMsg();
             }
         } else {
-            $object->{$this->verbs[0]}($this->verbs);
+            if(method_exists($object, $this->verbs[0]))
+            {$object->{$this->verbs[0]}($this->verbs);}
+            else {new ErrorMsg();}
         }
 
     }
