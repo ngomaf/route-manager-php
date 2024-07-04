@@ -14,7 +14,6 @@ class Notice  extends Controller {
     }
     
     public function show ($params) {
-        var_dump($params);
         $this->view->slug = $params;
         $this->view->render('site/notice');
     }

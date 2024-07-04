@@ -3,6 +3,7 @@
 namespace Controllers\admin;
 
 use Helpers\Controller;
+use Controllers\site\ErrorMsg;
 
 class Profile extends Controller {
     function __construct() {
@@ -16,6 +17,7 @@ class Profile extends Controller {
     public function password($params=[]) {
         if(empty($params) || $params[1]=='edit') {$this->passEdit();}
         elseif($params[1]=='update') {$this->passUpdate($params[1]);}
+        else {new ErrorMsg();}
     }
 
     public function passEdit() {
