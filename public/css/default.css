@@ -1,0 +1,166 @@
+/*
+    fortunawork
+    2022 - 2023
+    caala-Huambo
+*/
+
+
+
+/* inicializacao */
+
+@font-face {font-family: "Poppins"; src: url("fonts/Poppins-Regular.ttf");}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.msg {
+    padding: 10px;
+    color: rgb(193, 133, 24);
+    background: #ffeecd;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+body {
+    font: normal 12pt 'Poppins';
+    background-color: #e9ffff;
+    color: #333;
+}
+
+header {
+    background-color: aqua;
+    height: 150px;
+    position: relative;
+}
+
+header nav {
+    padding-top: 100px;
+    margin-left: 5%;
+}
+
+header nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #064444;
+}
+
+header nav a:hover {
+    color: #6ebbbb;
+}
+
+header h1 {
+    position: absolute;
+    right: 5%;
+    top: 55px;
+    width: 150px;
+}
+
+header h1 img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* main */
+
+main {
+    width: 90%;
+    margin: 20px auto;
+    min-height: 60vh;
+}
+
+main h1:first-child + p {
+    color: #8d8d8d;
+}
+
+main ul {
+    margin-top: 20px;
+}
+
+main li {
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+main a {
+    text-decoration: none;
+    color: #064444;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+label {
+    color: #8b8b8b;
+    font-size: 10pt;
+}
+
+input[type=text],
+input[type=password],
+form  button {
+    padding: 5px;
+    font: normal 12pt 'Poppins';
+}
+
+form  button {
+    padding: 7px 25px;
+    border: aqua;
+    background: aqua;
+    color: #064444;
+    border-radius: 3px;
+
+    transform: .3s;
+}
+
+form button:hover {
+    border: #0ca0a0;
+    background: #0ca0a0;
+    color: #e9ffff;
+}
+
+.error h1 {
+    color: red;
+}
+
+.error p {
+    color: #cc4747;
+}
+
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    font-size: 10pt;
+    color: #556969;
+}

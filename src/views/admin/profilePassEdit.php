@@ -1,9 +1,9 @@
 <?php
-
+    $title = 'Profile edit password';
     require_once DIR."src/views/header.php";
 ?>
     <a href="<?= URL ?>/admin/profile">« back</a>
-    <h1>Profile edit password</h1>
+    <h1><?= $title ?></h1>
     <p>This page is to edit password to logued user.</p>
 
     <form action="<?= URL ?>/admin/profile/password/update/rosa-fortuna" method="post">
@@ -16,4 +16,4 @@
         <button type="submit">Update</button>
     </form>
 
-<?php require_once DIR."src/views/header.php"; ?>
+<?php require_once DIR."src/views/footer.php"; ?>
