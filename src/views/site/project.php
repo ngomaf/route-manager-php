@@ -1,5 +1,5 @@
 <?php
-
+    $title = $this->slug;
     require_once DIR."src/views/header.php";
 ?>
     <h1><?= $this->slug ?></h1>
@@ -17,4 +17,4 @@
     </p>
 
 
-<?php require_once DIR."src/views/header.php"; ?>
+<?php require_once DIR."src/views/footer.php"; ?>
