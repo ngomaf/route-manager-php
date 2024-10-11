@@ -1,7 +1,7 @@
 <?php
 
     $title = 'Single notice page';
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <a href="<?= URL ?>/admin/noticia">« back</a>
     <h1><?= $title ?></h1>
@@ -12,4 +12,4 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt illo et, iusto labore vitae, perspiciatis quam, corrupti cupiditate modi at quaerat eum libero voluptate ratione reprehenderit officiis dolores. Enim, quaerat.
     </p>
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>

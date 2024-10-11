@@ -6,8 +6,8 @@ trait TranslateToPt {
 
     public static function get() {
         return [
-            'admin' => 'admin',
             'site' => 'site',
+            'admin' => 'admin',
             // pages
             'inicio' => 'home',  
             'sobre' => 'about', 

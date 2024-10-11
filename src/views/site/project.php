@@ -1,6 +1,6 @@
 <?php
     $title = $this->slug;
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <h1><?= $this->slug ?></h1>
     <p>The called Slug is: <?= $this->slug ?>.</p>
@@ -17,4 +17,4 @@
     </p>
 
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>

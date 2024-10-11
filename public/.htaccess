@@ -1,9 +1,15 @@
 RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+# Bloqueia a listagem de diretórios.
 Options All -Indexes
 
-DirectoryIndex index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /tests/route-manager-php/public/index.php?url=$1 [QSA,L]
+# permissao CORS para ajax
+Header set Access-Control-Allow-Origin "*"
 
-# note o caminho antes index.php
-# deve ser alterado de acordo com o directorio do seu projecto
+# Mensagem de erro personalizada.
+ErrorDocument 403 "<br><h1 style='color: red;'>Acesso Negado!</h1><p style='font-size: 14pt; color: #333;'>Por questoes de seguranca, o cesso directo aos arquivos nao e permitido neste sistema.<br><strong>Volte</strong> e use os recursos clicaveis para melhor uso do sistema ou <strong>contacte o administrador.</strong></p>"
