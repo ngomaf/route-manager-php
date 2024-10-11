@@ -1,7 +1,7 @@
 <?php
 
     $title = 'Edit notice';
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <a href="<?= URL ?>/admin/noticia">« back</a>
     <h1><?= $title ?></h1>
@@ -23,4 +23,4 @@
         <button type="submit">Update</button>
     </form>
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>

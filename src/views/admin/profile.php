@@ -1,7 +1,7 @@
 <?php
 
     $title = 'Profile user';
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <a href="<?= URL ?>/admin">« back</a>
 
@@ -19,4 +19,4 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque excepturi eveniet cum perspiciatis est accusantium nesciunt mollitia ex natus, ducimus eaque nisi voluptas molestias? Perferendis minima quis quam delectus! Incidunt?
     </p>
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>

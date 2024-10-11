@@ -1,7 +1,7 @@
 <?php
 
     $title = 'Projects Page';
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <a href="<?= URL ?>/admin">« back</a>
     <h1><?= $title ?></h1>
@@ -18,4 +18,4 @@
         <li><a href="<?= URL ?>/project/ruby-dev">Ruby dev</a></li>
     </ul>
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>

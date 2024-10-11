@@ -1,7 +1,7 @@
 <?php
 
     $title = 'Nitices Page';
-    require_once DIR."src/views/header.php";
+    require_once "../src/views/header.php";
 ?>
     <h1><?= $title ?></h1>
     <p>This is a Nitices page.</p>
@@ -20,4 +20,4 @@
         <li><a href="<?= URL ?>/rose-fortuna-life">Rose Fortuna life</a></li>
     </ul>
 
-<?php require_once DIR."src/views/footer.php"; ?>
+<?php require_once "../src/views/footer.php"; ?>
